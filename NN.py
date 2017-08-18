@@ -78,6 +78,7 @@ def calculateNumericAttMeans():
             atts[i].append(mean)   
             stdev = numericMean.std()
             atts[i].append(stdev)           
+		
 # Replace missing values in the data set
 def replaceMissing():
     for i in range(len(instances)): 
@@ -180,7 +181,6 @@ def train(trainData = [], testSet = []):
         inputLayer.append(I)
         target = atts[-1].index( trainData[t][-1])
         targets.append(target)
-    
     # loop for every epoch of training - terminating condition is # epochs
     while(epochs < EPOCHS_TOTAL):
         cnt = 0
@@ -259,12 +259,11 @@ def classify(testSet=[]):
     falsePos = 0
     trueNeg = 0
     falseNeg= 0
-    trueNeg=0
-    size= len(testSet)
+    trueNeg = 0
+    size = len(testSet)
     nn.correct = 0 # reset
     neg = 0 # index zero of class label
-    pos = 1 # index 1 of class label
-    
+    pos = 1 # index 1 of class label 
     for t in range(len(testSet)):
         target = atts[-1].index( testSet[t][-1])
         inputs = getInputs(testSet[t])
@@ -286,20 +285,16 @@ def classify(testSet=[]):
             elif(prediction ==0):
                 nn.correct += 1
                 trueNeg+= 1
-        trueNeg = size - truePos
-               
+        trueNeg = size - truePos 
         if(prediction != target and target == 1):
-            falseNeg += 1
-                  
+            falseNeg += 1 
         if(prediction != target and target == 0):
-            falsePos += 1
-    
+            falsePos += 1 
     precision =  round((truePos/(truePos + falsePos))*100 ,2)
     recall = round((truePos/ (truePos + falseNeg))*100, 2)
     specificity = round((trueNeg/ (trueNeg + falsePos))*100,2)
-    f1 =  round(((2*recall*precision)/(recall+precision)),2)
-    
-	# evaluation metrics 
+    f1 =  round(((2*recall*precision)/(recall+precision)),2) 
+	 
     print("Precision: ")
     print(precision)
     print("Recall: ")
