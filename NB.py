@@ -1,4 +1,3 @@
-
 # Naive Bayes in Python
 # Data Mining 
 
@@ -92,8 +91,7 @@ def calculateEntropyOfClassAtt(pos):
     entropy_cl = -((prob_first *math.log(prob_first,2)) + ((   prob_second *math.log(   prob_second,2))))
     #print(entropy_cl)
     return entropy_cl
-     
-
+    
 # Calculate information gain 
 def calculateInfo(pos, binVal):
     # helper function to calculate info from 2 entropies for splits
@@ -267,7 +265,6 @@ def updateAttribute(pos, attsValues, bestSplits):
     atts[pos].clear()
     for i in range(len(binArr)):
          atts[pos].append(i+1)
-   
     return instances
 
 # Calculate probabilities
@@ -297,7 +294,6 @@ def calculateNBProb( trainData= []):
             elif(atts[j][0] !="numeric"): 
                 newArr = [0]*(len(atts[j])-1)
                 pNeg.append(newArr)
-
     for j in range(sizeAtts):
         if (j == pos):
             newArr = [0]*(len(atts[j]))
@@ -332,7 +328,6 @@ def calculateNBProb( trainData= []):
             pPos[k][0] =pos_mean
             pPos[k][1] =pos_std
         
-    
     # Iterate over ALL THE ATTRIBUTES
     # for all the instances, check each attribute and get probability based on class label   
     # for each att create an array of counts which will at the end be transformed to probabilites
@@ -372,8 +367,7 @@ def calculateNBProb( trainData= []):
                 pNeg[i][k] = (pNeg[i][k]+0.5)/(totalN +1)
     likelihoods.append(pNeg)
     likelihoods.append(pPos)
-      
-
+     
 # Perform NB classification on test set 
 def classifyNB(testData= []):
  
@@ -469,34 +463,28 @@ def classifyNB(testData= []):
     
     macro_f1 = (f1_measureN + f1_measureP)/ 2
     micro_f1 = 2*(micro_precision*micro_recall)/ (micro_precision + micro_recall)
-    
- 
+
     # show values for each round
     print("Micro precision:")
     micro_precision = (round(micro_precision, 4)) * 100
     print(micro_precision)
     microP.append(micro_precision)
-    
     print("Micro recall:")
     micro_recall = (round(micro_recall, 4)) * 100
     print(micro_recall)
     microR.append(micro_recall)
-    
     print("F1 micro: ")
     micro_f1 = (round(micro_f1, 4)) * 100
     print(micro_f1)
-    microF1.append(micro_f1)
-    
+    microF1.append(micro_f1) 
     print("Macro precision:")
     macro_precision = (round(macro_precision, 4)) * 100
     print(macro_precision)
     macroP.append(macro_precision)
-    
     print("Macro recall:")
     macro_recall = (round(macro_recall, 4)) * 100
     print(macro_recall)
     macroR.append(macro_recall)
-    
     print("F1 macro: ")
     macro_f1 = (round(macro_f1, 4)) * 100
     print(macro_f1)
@@ -506,11 +494,9 @@ def classifyNB(testData= []):
     correct  = countCorrect / size
     correct = correct * 100 
     correct = (round(correct, 2))
-    accuracies.append(correct)
-         
+    accuracies.append(correct
 
-
-# MAIN
+# MAIN***********************************
 
 from scipy.io import arff
 import numpy as np
@@ -529,12 +515,9 @@ if __name__ == '__main__':
 	parser.add_argument('--discretize', action='store_true')
 	args = parser.parse_args()
 	print(args.discretize)
-
 #file_path = path.relpath("temp/data.txt")
- 
 file = open(filename)
 k = 10
-
 atts = [] # array holds nominal att values, or 'numeric' att label, & numeric means
 instances = [] # array holds all the samples/instances
 trainSet= [] # array holds each round of training data
@@ -548,18 +531,15 @@ microP = []
 microR = []
 macroF1 = []
 microF1 = []
-
 # used for entropy discretization
 allGains = [] 
 attsValues = []
 bestSplits =[]
 pos = 4 # att to discretize  
-
 # get instances & atts from the file data & attributes
 parseFile(); 
 fold = len(instances) / k
 fold = round(fold)
- 
 nominalAttCounts =  []
  
 #These methods will pre-process the data:
@@ -586,12 +566,9 @@ attsValues =getAttsValues(pos,0, 1, attsValues)
 if args.discretize == 1:
 	entropyDiscretize(classAttEntropy, pos, attsValues, 1); # specify which att?
 	updateAttribute(pos, attsValues, bestSplits);
-#print(bestSplits)
-
 # End of pre-processing of data'''
 
 # Training and testing Naive Bayes classifier for the data:
-
 # Perform K fold cross validation to divide data into Train Set and Test Sets
 # Training
     #1) calculate Prior
@@ -600,8 +577,8 @@ if args.discretize == 1:
     #3) calculate Posterior 
     #4) store and output performance results
     
-kFoldCV();
-total = 0;
+kFoldCV()
+total = 0
  
 for i in range(k):
     classPriors = []
@@ -624,46 +601,32 @@ a = np.sum(accuracies)
 print("AVERAGE ACCURACY:")
 print(a/k)
 print(" ") 
-
-# show avg macro precision 
 a = np.sum(microP)
 print("AVERAGE MICRO PRECISION:")
 a = a/k
 print(a) 
 print(" ")
-
-# show avg micro recall 
 a= np.sum(microR)
 print("AVERAGE MICRO RECALL:")
 a = a/k
 print(a) 
-print(" ")
-
-#show avg micro F1
+print(" ") 
 a= np.sum(microF1)
 print("AVERAGE MICRO F1:")
 a = a/k
 print(a)
 print(" ") 
-
-# show avg macro precision
 a= np.sum(macroP)
 print("AVERAGE MACRO PRECISION:")
 a = a/k
 print(a)
 print(" ") 
-
-# show avg macro recall
 a= np.sum(macroR)
 print("AVERAGE MACRO RECALL:")
 a = a/k
 print(a)
 print(" ") 
- 
-# show avg macro F1
 a= np.sum(macroF1)
 print("AVERAGE MACRO F1:")
 a = a/k
 print(a) 
-
- 
