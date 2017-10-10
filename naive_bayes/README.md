@@ -28,3 +28,7 @@ Training and testing Naive Bayes classifier steps:
 Parameters to tune: 
     k = number of folds for cross validation
     pos = position of categorical attribute to discretize
+
+Results
+
+ ![nb_results](screenshots/nb_results.png)
