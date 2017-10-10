@@ -17,18 +17,18 @@ Data preprocessing steps:
 Training and testing Naive Bayes classifier steps:
 
 -  Perform K fold cross validation to divide data into Train Set and Test Sets
--  Training
--	   calculate Prior probabilities
--	   calculate Likelihoods
 
--  NB classification steps:  
--	   calculate Posterior probabilities for each test sample and determine predictions of the class labels
--	   store and output evaluation metrics: accuracy, micro precision, micro recall, macro precision, macro recall, F1)
+Training
+-	 calculate Prior probabilities
+-	 calculate Likelihoods
 
--  Parameters to tune: 
-    k = number of folds for cross validation
-    pos = position of categorical attribute to discretize
+NB classification steps:  
+-	 calculate Posterior probabilities for each test sample and determine predictions of the class labels
+-	 store and output evaluation metrics: accuracy, micro precision, micro recall, macro precision, macro recall, F1)
 
-Results
+Parameters to tune: 
+-  k = number of folds for cross validation
+- pos = position of categorical attribute to discretize
 
+ 
  ![nb_results](screenshots/nb_results.png)
