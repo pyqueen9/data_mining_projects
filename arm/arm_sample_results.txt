@@ -1,0 +1,33 @@
+*******************RULES****************** 
+
+['Old El Paso Salsa', 'Avocado', 0.6728, 1.0245]
+['Fancy Feast Cat Food', 'Avocado', 0.6599, 1.0048]
+['Lettuce', 'Avocado', 0.66, 1.005]
+['General Mills Wheat Chex', 'Avocado', 0.6511, 0.9914]
+['Tylenol Infant Liquid', 'Avocado', 0.6972, 1.0615]
+['Onion Dip', 'Avocado', 0.6575, 1.0011]
+['Scott 12-Pack White Bath Tissue', 'Avocado', 0.6575, 1.0011]
+['B & M Baked Beans', 'Avocado', 0.6581, 1.002]
+['Tropican Orange Juice', 'Avocado', 0.6695, 1.0193]
+['Carnation Powder Baby Formula', 'Avocado', 0.6568, 1.0001]
+['Bounty 8-Pack White Paper Towels', 'General Mills Multi Bran Chex', 0.8491, 2.1997]
+['General Mills Multi Bran Chex', 'Bounty 8-Pack White Paper Towels', 0.9767, 2.1997]
+['Perdue Chicken Breasts', 'Avocado', 0.6754, 1.0285]
+['Dole 6-Pack Pineapple Juice', 'Avocado', 0.6465, 0.9844]
+['Skippy Peanut Butter', 'Avocado', 0.8053, 1.2261]
+["Puff's Plus Facial Tissue", 'Avocado', 0.9384, 1.4288]
+['Avocado', "Puff's Plus Facial Tissue", 0.6898, 1.4288]
+["Puff's Plus Facial Tissue", 'Dole 6-Pack Pineapple Juice', 0.5179, 1.0115]
+['RealLemon Pure Lemon Juice', 'Dole 6-Pack Pineapple Juice', 0.9201, 1.797]
+['Dole 6-Pack Pineapple Juice', 'RealLemon Pure Lemon Juice', 0.5059, 1.797]
+['Apples', 'Avocado', 0.6573, 1.0008]
+ 
+Size k:  1  Frequent sets :  64
+..................................
+Size k:  2  Frequent sets :  24
+..................................
+Size k:  3  Frequent sets :  0
+..................................
+Total Rules :  21 
+
+--- Execution time: 0.95 seconds  ---
