@@ -9,7 +9,6 @@ and Z-score normalization for numerical data.
 -  Parameters learning rate, # of hidden layer nodes, and # of epochs can be changed to try different models.
 -  The output of the script is the first model in the results table for k=5 folds CV.
 
-Command to run file: `python neural_net.py -f adult-big.arff`
-
+ 
 
  ![nn_results1](screenshots/nn_results1.png)
