@@ -1,5 +1,7 @@
 ## Naive Bayes in Python on the "adult-big" dataset
 
+Source for data: https://archive.ics.uci.edu/ml/datasets/adult
+
 Prepare the dataset:
 
 #1) Parse/clean up the dataset input file and store data
