@@ -10,8 +10,7 @@ Data preprocessing steps:
 
 -  Calculate numeric and nominal attributes means
 -  Replace missing values in the data set (with mean for numeric and mode for nominal attributes)
--  Entropy-based discretization: 
--	   calculate entropy and information gain to find best splitting values for nominal/ categorical attributes 
+-  Entropy-based discretization:  calculate entropy and information gain to find best splitting values for nominal/ categorical attributes 
 -  Update the nominal attribute values with discretized values
  
 Training and testing Naive Bayes classifier steps:
