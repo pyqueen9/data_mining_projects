@@ -1,6 +1,6 @@
-# data_mining_projects
+Data mining projects in Python
 
-The following classifiers are implemented in Python:
+The following algorithms are implemented from scratch:
 
 1. Naive Bayes
 2. Neural Network
